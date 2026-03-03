@@ -1,0 +1,21 @@
+{
+  "name": "news-reader",
+  "version": "1.0.0",
+  "description": "Modern news reader with Flipboard-like interface",
+  "type": "module",
+  "scripts": {
+    "server:install": "cd server && npm install",
+    "web:install": "cd web && npm install",
+    "server:dev": "cd server && npm run dev",
+    "web:dev": "cd web && npm run dev",
+    "dev": "npm run server:install && npm run web:install && npm-run-all --parallel server:dev web:dev",
+    "build": "cd web && npm run build",
+    "install": "npm run web:install"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "keywords": ["news", "react", "vite", "typescript"],
+  "author": "",
+  "license": "MIT"
+}

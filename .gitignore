@@ -1,0 +1,27 @@
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Development
+.DS_Store
+*.swp
+*.swo
+*.swn
+.vscode/
+.idea/
+*.log
+
+# Runtime
+.env.production.local

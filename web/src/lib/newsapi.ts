@@ -71,7 +71,7 @@ class NewsApiClient {
     }
 
     // Return from prefetch if available
-    if (this.prefetchCache[cacheKey]) {
+    if (cacheKey in this.prefetchCache) {
       console.log(`[Prefetch hit] ${cacheKey}`);
       return this.prefetchCache[cacheKey];
     }
@@ -132,7 +132,7 @@ class NewsApiClient {
     const cacheKey = this.getCacheKey(nextPage, search, categories, publishedAfter);
 
     // Don't prefetch if already cached or prefetching
-    if (this.cache[cacheKey] || this.prefetchCache[cacheKey]) {
+    if (cacheKey in this.cache || cacheKey in this.prefetchCache) {
       return;
     }
 
@@ -167,7 +167,7 @@ class NewsApiClient {
     const cacheKey = this.getCacheKey(prevPage, search, categories, publishedAfter);
 
     // Don't prefetch if already cached or prefetching
-    if (this.cache[cacheKey] || this.prefetchCache[cacheKey]) {
+    if (cacheKey in this.cache || cacheKey in this.prefetchCache) {
       return;
     }
 

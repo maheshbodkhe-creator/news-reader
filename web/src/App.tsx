@@ -1,6 +1,6 @@
 // web/src/App.tsx
-import React, { useState, useEffect, useCallback } from 'react';
-import { newsApi, NewsArticle, NewsResponse, NewsError } from './lib/newsapi';
+import { useState, useEffect, useCallback } from 'react';
+import { newsApi, NewsArticle, NewsError } from './lib/newsapi';
 
 const CATEGORIES = [
   'tech',
@@ -376,8 +376,8 @@ function App() {
                 className="pager-btn"
                 onClick={handleNextArticle}
                 disabled={
-                  currentPage === totalPages &&
-                  currentArticleIndex === pageData.articles.length - 1
+                  !pageData || (currentPage === totalPages &&
+                  currentArticleIndex === pageData.articles.length - 1)
                 }
                 aria-label="Next article"
               >

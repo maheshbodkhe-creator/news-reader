@@ -1,29 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "web/dist",
-  "env": {
-    "THENEWSAPI_TOKEN": "@thenewsapi_token"
-  },
-  "functions": {
-    "api/news.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/news/all",
-      "dest": "api/news.js"
-    },
-    {
-      "src": "/api/health",
-      "dest": "api/health.js"
-    },
-    {
-      "handle": "filsystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "web/dist/$1"
-    }
-  ]
+  "buildCommand": "cd web && npm install && npm run build",
+  "outputDirectory": "web/dist"
 }
